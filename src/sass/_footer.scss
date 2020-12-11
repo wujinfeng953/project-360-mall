@@ -1,0 +1,18 @@
+.footer {
+    width: $page-w;
+    background: blueviolet;
+}
+
+.footer-content {
+    width: $page-width;
+    background: yellow;
+    margin: 0 auto;
+    .footer-t {
+        height: 367px;
+        background-color: skyblue;
+    }
+    .footer-b {
+        height: 200px;
+        background-color: rosybrown;
+    }
+}

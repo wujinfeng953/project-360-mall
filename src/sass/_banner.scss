@@ -1,0 +1,56 @@
+.banner {
+    width: $page-w;
+    height: 100%;
+    background-color: oldlace;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+    .banner-box {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        .banner-box-pic {
+            float: left;
+        }
+    }
+    ol {
+        position: absolute;
+        left: 800px;
+        bottom: 10px;
+        li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-indent: -999em;
+            opacity: 0.5;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 2px solid #000;
+            .active {
+                background: blue;
+            }
+        }
+    }
+}
+
+.banner-lbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    color: #fff;
+    font-size: 100px;
+    text-decoration: none;
+    left: 580px;
+}
+
+.banner-rbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    color: #fff;
+    font-size: 100px;
+    text-decoration: none;
+    left: 1460px;
+    right: 20px;
+}

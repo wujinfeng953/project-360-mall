@@ -1,0 +1,70 @@
+.top {
+    width: $page-w;
+    background: #333;
+    // display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 105;
+    height: 130px;
+}
+
+.top-img {
+    text-align: center;
+    width: 100%;
+    background: #333;
+    height: 90px;
+    // overflow: hidden;
+    position: relative;
+    .inner-btn {
+        margin: 0 auto;
+        max-width: 1180px;
+        position: absolute;
+        top: 0;
+        right: 380px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ddd;
+        cursor: pointer;
+    }
+}
+
+.top-nav {
+    width: $page-width;
+    margin: 0 auto;
+    .top-nav-list {
+        float: left;
+        height: 100%;
+        a {
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            height: 100%;
+            line-height: 20px;
+            margin-right: 25px;
+            padding: 10px 0;
+            font-size: $font12;
+        }
+    }
+    .top-user-box {
+        float: right;
+        height: 100%;
+        .user-box {
+            font-size: $font12;
+            a {
+                cursor: pointer;
+                color: #fff;
+                line-height: 20px;
+                display: inline-block;
+                padding: 10px 0;
+                margin-right: 25px;
+            }
+            span {
+                font-size: $font18;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import 'reset';
+$page-w:100%;
+$page-width:1180px;
+$font12:12px;
+$font14:14px;
+$font18:18px;
+@import 'top';
+@import 'header';
+@import 'banner';
+@import 'main';
+@import'footer';
