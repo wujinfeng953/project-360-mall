@@ -81,7 +81,93 @@
     }, 3000);
 
 
+    //二级侧边栏效果
+    let $headLi = $('.header-list-ul li');
+    let $headBox = $('.header-ul-box');
+    let $headItem = $('.header-ul-box .item');
+    $headLi.hover(function() {
+        $headBox.show();
+        $headItem.eq($(this).index()).show().siblings('.item').hide();
+        $(this).css('backgroundColor', "rgba(51,51,51,0.7)");
+
+    }, function() {
+        $headBox.hide();
+        $(this).css('backgroundColor', ""); //鼠标移出 背景色消失  盒子也消失
+    })
+
+    $headBox.hover(function() {
+        $headBox.show();
+    }, function() {
+        $headBox.hide();
+    })
+
+    //楼梯效果
+    let $loutinav = $('.index-elecator-box')
+    let $louti = $('.index-elecator-box a') //获取11个a
+    var $louceng1 = $('.a1'); //前三层
+    var $louceng2 = $('.b1'); //后面8层
+
+    //显示隐藏左侧的楼梯：触发滚轮 根据对应的scrollTop值确定是否显示左侧的楼梯。
+    // console.log($('.main-cnt-activity').offset().top); //760px
+    // 第一层楼梯的top值
+
+    function scroll() {
+        let $scrolltop = $(window).scrollTop();
+        if ($scrolltop >= 760 - 100) {
+            $loutinav.show();
+        } else {
+            $loutinav.hide();
+        }
+
+    }
+    scroll();
+    $(window).on('scroll', function() {
+        scroll();
+    });
+    //第二步：点击左侧的楼梯，楼层运动到对应的位置
+    $louti.on('click', function() {
+        //点击楼梯，触发滚轮事件
+        $(window).off('scroll');
+        $(this).addClass('active1').siblings('li').removeClass('active1'); //当前点击的添加类名。
+        var $loucengtop = $louceng1.eq($(this).index()).offset().top; //每个楼层的top
+
+        $('html').animate({
+            scrollTop: $loucengtop - 80 //每个楼层的top值求出，然后给滚动条的top值
+        }, function() {
+            $(window).on('scroll', function() {
+                scroll();
+            });
+        });
+    })
+
+
+    //渲染
+    const $list = $('.main-b-list-ul')
     $.ajax({
         url: 'http://10.31.161.50/dashboard/360mall-porject/php/listdata.php',
+        dataType: 'json',
+    }).done(function(data) {
+        let $strhtml = '';
+        // console.log(data)
+        $.each(data, function(index, value) {
+            // console.log(value);
+            $strhtml += `
+            <a href="detail.html?sid=${value.sid}">
+                    <li>
+                    <img class="lazy" data-original="${value.url}" width="180" height="180"/>
+                    <p>${value.title}</p>
+                    <span>${value.price}</span>
+                    <i>直降</i>
+                    </li>
+                </a>
+            
+            `;
+        })
+        $list.html($strhtml);
+        $(function() { //页面加载完成
+            $("img.lazy").lazyload({
+                effect: "fadeIn" //显示方法：谈入
+            });
+        });
     })
 }(jQuery);

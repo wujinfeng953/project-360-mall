@@ -1,5 +1,5 @@
 .banner {
-    width: $page-w;
+    width: 1920px;
     background-color: oldlace;
     height: 530px;
     position: relative;
@@ -13,6 +13,7 @@
         height: 530px;
         width: 1903px;
         margin: 0 auto;
+        overflow: hidden;
         .banner-box-pic {
             float: left;
             // img {
@@ -22,23 +23,23 @@
     }
     ol {
         position: absolute;
-        left: 50%;
+        left: 1025px;
         transform: translate(-50%, 0);
         bottom: 10px;
         li {
             float: left;
-            width: 20px;
-            height: 20px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             text-indent: -999em;
             opacity: 0.5;
             margin-right: 10px;
             cursor: pointer;
             border: 2px solid #000;
-            .active {
-                background: blue;
-            }
         }
+    }
+    .active {
+        background-color: rebeccapurple;
     }
 }
 
@@ -49,7 +50,7 @@
     color: #fff;
     font-size: 100px;
     text-decoration: none;
-    left: 50%;
+    left: 940px;
     margin-left: -360px;
 }
 
@@ -61,5 +62,5 @@
     font-size: 100px;
     text-decoration: none;
     margin-right: -590px;
-    right: 50%
+    left: 1480px;
 }
