@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){//前端点击了submit提交按钮，后端开始�
     $email = $_POST['email'];
     $conn->query("insert registry values(null,'$user','$pass','$email',NOW())");//将数据传递给数据库。
     //一旦数据提交成功，回到前端的登录页面
-    header('location:http://localhost/JS2010/week06/Day%2029-Day%2031_jquery/loginregistry/src/login.html');
+    header('location:http://10.31.161.50/dashboard/360mall-porject/src/index1.html');
 }
 
 

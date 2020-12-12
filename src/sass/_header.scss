@@ -1,6 +1,7 @@
 .header {
     width: $page-w;
     margin-top: 130px;
+    transition: all 0.2s;
 }
 
 .header-content {
@@ -139,6 +140,27 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.index-elecator-box {
+    position: fixed;
+    top: 50%;
+    z-index: 111;
+    left: 280px;
+    text-align: center;
+    a {
+        display: block;
+        padding: 10px;
+        background: #fff;
+        font-size: $font12;
+        height: 30px;
+        line-height: 12px;
+        box-sizing: border-box;
+        border-bottom: 1px solid red;
+        &:hover {
+            color: red;
         }
     }
 }

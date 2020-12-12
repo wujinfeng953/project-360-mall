@@ -3,13 +3,15 @@
     background-color: oldlace;
     height: 530px;
     position: relative;
+    left: 50%;
+    margin-left: -952px;
     overflow: hidden;
     .banner-box {
         position: absolute;
         left: 0px;
         top: 0px;
         height: 530px;
-        width: 100%;
+        width: 1903px;
         margin: 0 auto;
         .banner-box-pic {
             float: left;

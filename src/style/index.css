@@ -37,7 +37,8 @@ input::-webkit-input-placeholder {
   top: 0;
   width: 100%;
   z-index: 105;
-  height: 130px; }
+  height: 130px;
+  transition: all 0.1s; }
 
 .top-img {
   text-align: center;
@@ -91,7 +92,8 @@ input::-webkit-input-placeholder {
 
 .header {
   width: 100%;
-  margin-top: 130px; }
+  margin-top: 130px;
+  transition: all 0.2s; }
 
 .header-content {
   width: 1180px;
@@ -213,18 +215,38 @@ input::-webkit-input-placeholder {
   text-decoration: underline;
   color: red; }
 
+.index-elecator-box {
+  position: fixed;
+  top: 50%;
+  z-index: 111;
+  left: 280px;
+  text-align: center; }
+.index-elecator-box a {
+  display: block;
+  padding: 10px;
+  background: #fff;
+  font-size: 12px;
+  height: 30px;
+  line-height: 12px;
+  box-sizing: border-box;
+  border-bottom: 1px solid red; }
+.index-elecator-box a:hover {
+  color: red; }
+
 .banner {
   width: 100%;
   background-color: oldlace;
   height: 530px;
   position: relative;
+  left: 50%;
+  margin-left: -952px;
   overflow: hidden; }
 .banner .banner-box {
   position: absolute;
   left: 0px;
   top: 0px;
   height: 530px;
-  width: 100%;
+  width: 1903px;
   margin: 0 auto; }
 .banner .banner-box .banner-box-pic {
   float: left; }
