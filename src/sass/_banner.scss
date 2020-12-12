@@ -1,6 +1,5 @@
 .banner {
     width: $page-w;
-    height: 100%;
     background-color: oldlace;
     height: 530px;
     position: relative;
@@ -9,13 +8,20 @@
         position: absolute;
         left: 0px;
         top: 0px;
+        height: 530px;
+        width: 100%;
+        margin: 0 auto;
         .banner-box-pic {
             float: left;
+            img {
+                width: 100%;
+            }
         }
     }
     ol {
         position: absolute;
-        left: 800px;
+        left: 50%;
+        transform: translate(-50%, 0);
         bottom: 10px;
         li {
             float: left;
@@ -41,7 +47,8 @@
     color: #fff;
     font-size: 100px;
     text-decoration: none;
-    left: 580px;
+    left: 50%;
+    margin-left: -360px;
 }
 
 .banner-rbtn {
@@ -51,6 +58,6 @@
     color: #fff;
     font-size: 100px;
     text-decoration: none;
-    left: 1460px;
-    right: 20px;
+    margin-right: -590px;
+    right: 50%
 }
