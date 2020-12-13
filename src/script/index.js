@@ -102,7 +102,8 @@
     })
 
     //楼梯效果
-    let $loutinav = $('.index-elecator-box')
+    let $loutinav = $('.index-elecator-box') //左侧楼梯
+    let $loutibom = $('.index-right-bottom')
     let $louti = $('.index-elecator-box a') //获取11个a
     var $louceng1 = $('.a1'); //前三层
     var $louceng2 = $('.b1'); //后面8层
@@ -115,8 +116,12 @@
         let $scrolltop = $(window).scrollTop();
         if ($scrolltop >= 760 - 100) {
             $loutinav.show();
+            $loutibom.show();
+
         } else {
             $loutinav.hide();
+            $loutibom.hide();
+
         }
 
     }

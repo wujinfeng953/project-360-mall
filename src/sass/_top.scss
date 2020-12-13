@@ -61,11 +61,82 @@
                 display: inline-block;
                 padding: 10px 0;
                 margin-right: 25px;
+                border-radius: 5px 5px 0 0;
             }
-            span {
-                font-size: $font18;
+            .user-box-1 {
+                cursor: pointer;
                 color: #fff;
+                line-height: 20px;
+                display: inline-block;
+                padding-top: 12px;
+                margin-right: 25px;
+                border-radius: 5px 5px 0 0;
+                position: relative;
+                &:hover {
+                    background: #fff;
+                    color: #333;
+                }
+                &:hover .user-box-none {
+                    display: block;
+                }
+            }
+            .user-box-2 {
+                font-size: $font18;
+                display: inline-block;
+                width: 40px;
+                color: #fff;
+                text-align: center;
+                position: relative;
+                &:hover {
+                    background: #fff;
+                    color: #333;
+                }
+                &:hover .user-box-2-none {
+                    display: block;
+                }
             }
         }
+    }
+    .user-box-none {
+        background: #fff;
+        border-radius: 0 0 4px 4px;
+        color: #333;
+        display: none;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 42px;
+        width: 160px;
+        z-index: 100;
+        .user-box-none1 {
+            float: left;
+            width: 60px;
+            height: 60px;
+            img {
+                width: 100%;
+            }
+        }
+        .user-box-none2 {
+            float: left;
+            p {
+                line-height: 30px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .user-box-2-none {
+        width: 300px;
+        background: #fff;
+        display: none;
+        border-radius: 0 0 5px 5px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        color: #333;
+        padding: 30px 0;
+        text-align: center;
+        z-index: 12;
+        font-size: 12px;
     }
 }
