@@ -429,6 +429,38 @@ html.body {
   display: block;
 }
 
+.t-banner {
+  background-color: rgba(28, 28, 30, 0.75);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+.t-banner .t-banner-box {
+  width: 400px;
+  height: 533px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -266px;
+}
+.t-banner .t-banner-box img {
+  width: 100%;
+}
+.t-banner .t-banner-box .t-banner-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .banner-a {
   min-width: 100%;
   height: 530px;

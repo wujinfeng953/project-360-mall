@@ -5,14 +5,18 @@ define(['jlazyload'], () => {
             const $top = $('.top');
             const $header = $('.header');
             const $topbtn = $('.inner-btn');
-            const $topImg = $('.top-img img')
+            const $topImg = $('.top-img img');
             $topbtn.on('click', function() {
                 $top.css('margin-top', -90)
                 $header.css('margin-top', 40)
                 $topImg.hide()
             });
-
-            //轮播图
+            //点击去掉页面最大的广告
+            const $bannerBtn = $('.t-banner-btn');
+            $bannerBtn.on('click', function() {
+                    $('.t-banner').hide();
+                })
+                //轮播图
             const $banner = $('.banner');
             const $ullist = $('.banner ul'); //运动的盒子
             const $piclist = $('.banner ul li'); //6个图片
@@ -187,7 +191,6 @@ define(['jlazyload'], () => {
                 var min = parseInt(time % 3600 / 60); //分钟
                 var sec = time % 60; //秒
 
-                console.log(hours);
                 // return ('离' + what + '还剩' + double(day) + '天' + double(hours) + '时' + double(min) + '分' + double(sec) + '秒');
                 return timer[0].innerHTML = double(hours),
                     timer[1].innerHTML = double(min),
