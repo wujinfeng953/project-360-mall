@@ -203,5 +203,24 @@
     .index-right-bottom {
         padding: 10px;
         display: none;
+        position: relative;
+        .index-right-bottom-pos {
+            position: absolute;
+            width: 90px;
+            height: 20px;
+            line-height: 20px;
+            left: -89px;
+            top: 10px;
+            text-align: center;
+            background-color: #fff;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 20;
+            display: none;
+        }
+    }
+    &:hover .index-right-bottom-pos {
+        display: block;
     }
 }
