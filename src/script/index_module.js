@@ -168,6 +168,37 @@ define(['jlazyload'], () => {
                 });
             });
 
+            //倒计时效果
+
+            function double(n) {
+                return n < 10 ? '0' + n : n;
+            };
+
+            function futuer() {
+                let timer = document.querySelectorAll('.countdown-time')
+
+                var futureTime = new Date('2020.12.31 0:0:0'); //未来的时间
+                var currentTime = new Date(); //当前的时间 ‘实时’
+
+                var time = Math.round((futureTime - currentTime) / 1000); //得到的剩余的秒数
+                console.log(time);
+                var day = parseInt(time / 60 / 60 / 24); //总秒数除以60*60*24=86400
+                var hours = parseInt(time % 86400 / 24 / 60); //小时
+                var min = parseInt(time % 3600 / 60); //分钟
+                var sec = time % 60; //秒
+
+                console.log(hours);
+                // return ('离' + what + '还剩' + double(day) + '天' + double(hours) + '时' + double(min) + '分' + double(sec) + '秒');
+                return timer[0].innerHTML = double(hours),
+                    timer[1].innerHTML = double(min),
+                    timer[2].innerHTML = double(sec)
+
+            }
+            futuer();
+            window.setInterval(function() {
+                futuer();
+            }, 1000)
+
 
             //渲染
             const $list = $('.main-b-list-ul')
