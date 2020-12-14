@@ -101,49 +101,68 @@
         $headBox.hide();
     })
 
+
+
     //楼梯效果
     let $loutinav = $('.index-elecator-box') //左侧楼梯
-    let $loutibom = $('.index-right-bottom')
+    let $loutibom = $('.index-right-bottom') //右侧浏览器窗口的回到顶层按钮
     let $louti = $('.index-elecator-box a') //获取11个a
-    var $louceng1 = $('.a1'); //前三层
-    var $louceng2 = $('.b1'); //后面8层
-
-    //显示隐藏左侧的楼梯：触发滚轮 根据对应的scrollTop值确定是否显示左侧的楼梯。
-    // console.log($('.main-cnt-activity').offset().top); //760px
-    // 第一层楼梯的top值
+    var $louceng = $('.a1');
 
     function scroll() {
-        let $scrolltop = $(window).scrollTop();
-        if ($scrolltop >= 760 - 100) {
+        let $scrolltop = $(window).scrollTop(); //滚轮的初始值为-140
+        $scrolltop = $scrolltop - 140 //header加了margin-top为140px
+        if ($scrolltop >= 487) {
             $loutinav.show();
-            $loutibom.show();
+            $loutibom.show(); //浏览器最右侧的回到顶部按钮
 
         } else {
             $loutinav.hide();
-            $loutibom.hide();
+            $loutibom.hide(); //浏览器最右侧的回到顶部按钮
 
         }
 
+        // 第四步：通过触发滚动条，通过楼层将对应的楼梯添加激活的样式。
+        // 如果楼层的top值>滚动条的top值,给楼层对应的楼梯添加激活状态。
+        $louceng.each(function(index, element) {
+            let $loucengTop1 = $(element).offset().top; //每一个楼层的top值。
+            $loucengTop1 = $loucengTop1 - 140
+            if ($loucengTop1 >= $scrolltop) {
+                //每次触发滚动条，滚动条的top值都会发生变化。
+                $louti.removeClass('active2'); //移除前面所有的激活状态
+                $louti.eq(index).addClass('active2'); //给满足条件的添加状态\;
+                return false; //终止循环
+
+            }
+        });
     }
-    scroll();
-    $(window).on('scroll', function() {
+    scroll(); //触发滚轮事件
+    $(window).on('scroll', function() { //每次滚轮再次触发滚轮事件
         scroll();
+
     });
     //第二步：点击左侧的楼梯，楼层运动到对应的位置
     $louti.on('click', function() {
         //点击楼梯，触发滚轮事件
         $(window).off('scroll');
-        $(this).addClass('active1').siblings('li').removeClass('active1'); //当前点击的添加类名。
-        var $loucengtop = $louceng1.eq($(this).index()).offset().top; //每个楼层的top
+        $(this).addClass('active2').siblings('li').removeClass('active2'); //当前点击的添加类名。
+        var $loucengtop1 = $louceng.eq($(this).index()).offset().top; //每个楼层的top
 
-        $('html').animate({
-            scrollTop: $loucengtop - 80 //每个楼层的top值求出，然后给滚动条的top值
+        // console.log($header.css('marginTop'));
+        if ($header.css('marginTop') === (40 + "px")) { //如果头部的margin-top值为40的时候每个楼层的top就加上90
+            $loucengtop1 = $loucengtop1 + 90
+        } else {
+            $loucengtop1 = $loucengtop1 - 130
+        }
+
+        $('html').stop(true).animate({
+            scrollTop: $loucengtop1 //每个楼层的top值求出，然后给滚动条的top值
         }, function() {
             $(window).on('scroll', function() {
                 scroll();
             });
         });
-    })
+    });
 
 
     //渲染

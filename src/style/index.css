@@ -55,6 +55,11 @@ input::-webkit-input-placeholder {
   float: right;
 }
 
+html.body {
+  min-width: 1260px;
+  height: 100%;
+}
+
 .top {
   width: 100%;
   background: #333;
@@ -68,17 +73,24 @@ input::-webkit-input-placeholder {
 
 .top-img {
   text-align: center;
-  width: 100%;
+  width: 1180px;
   background: #333;
   height: 90px;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-img img {
+  position: absolute;
+  top: 0;
+  left: -31%;
 }
 .top-img .inner-btn {
   margin: 0 auto;
   max-width: 1180px;
   position: absolute;
   top: 0;
-  right: 380px;
+  right: 0;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -361,7 +373,7 @@ input::-webkit-input-placeholder {
   box-sizing: border-box;
   border-bottom: 1px solid red;
 }
-.index-elecator-box a:hover {
+.index-elecator-box .active2 {
   color: red;
 }
 
@@ -398,13 +410,20 @@ input::-webkit-input-placeholder {
   display: none;
 }
 
-.banner {
-  width: 1920px;
-  background-color: oldlace;
+.banner-a {
+  min-width: 100%;
   height: 530px;
   position: relative;
+  overflow: hidden;
+}
+
+.banner {
+  width: 1902px;
+  background-color: oldlace;
+  height: 530px;
+  position: absolute;
   left: 50%;
-  margin-left: -952px;
+  transform: translateX(-50%);
   overflow: hidden;
 }
 .banner .banner-box {
@@ -412,8 +431,7 @@ input::-webkit-input-placeholder {
   left: 0px;
   top: 0px;
   height: 530px;
-  width: 1903px;
-  margin: 0 auto;
+  width: 100%;
   overflow: hidden;
 }
 .banner .banner-box .banner-box-pic {
@@ -549,7 +567,7 @@ input::-webkit-input-placeholder {
 
 .main {
   width: 100%;
-  background: #ddd;
+  background: #f0f0f0;
 }
 
 .main-content {
@@ -790,6 +808,12 @@ input::-webkit-input-placeholder {
   line-height: 20px;
   margin-top: 25px;
   margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 180px;
 }
 .main-content .main-b-list .main-b-list-ul a li span {
   color: #dd0e00;

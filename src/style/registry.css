@@ -35,7 +35,7 @@ li {
 }
 
 input::-webkit-input-placeholder {
-    color: #fff;
+    color: #999;
 }
 
 .clear:after {
@@ -241,6 +241,58 @@ input::-webkit-input-placeholder {
     width: 1180px;
     background: #ddd;
     margin: 0 auto;
+    height: 500px;
+    position: relative;
+}
+
+.main-box {
+    width: 450px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    padding-bottom: 40px;
+}
+
+.main-box-title {
+    text-align: center;
+    font-weight: 400;
+    color: #36b447;
+    line-height: 40px;
+}
+
+.main-form-input {
+    width: 300px;
+    height: 42px;
+    margin: 0 auto;
+    border: 1px solid #999;
+}
+
+.main-form-input input {
+    height: 42px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.main-porm-span {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.main-porm-submit {
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    border: none;
+    background-color: #36b447;
 }
 
 

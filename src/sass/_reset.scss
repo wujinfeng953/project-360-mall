@@ -54,3 +54,8 @@ input::-webkit-input-placeholder {
 .fr {
     float: right;
 }
+
+html.body {
+    min-width: 1260px;
+    height: 100%;
+}
