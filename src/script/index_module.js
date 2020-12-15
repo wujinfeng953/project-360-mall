@@ -95,7 +95,6 @@ define(['jlazyload'], () => {
                 $headBox.show();
                 $headItem.eq($(this).index()).show().siblings('.item').hide();
                 $(this).css('backgroundColor', "rgba(51,51,51,0.7)");
-
             }, function() {
                 $headBox.hide();
                 $(this).css('backgroundColor', ""); //鼠标移出 背景色消失  盒子也消失
@@ -181,17 +180,15 @@ define(['jlazyload'], () => {
             function futuer() {
                 let timer = document.querySelectorAll('.countdown-time')
 
-                var futureTime = new Date('2020.12.31 0:0:0'); //未来的时间
-                var currentTime = new Date(); //当前的时间 ‘实时’
+                let futureTime = new Date('2020.12.31 0:0:0'); //未来的时间
+                let currentTime = new Date(); //当前的时间 ‘实时’
 
-                var time = Math.round((futureTime - currentTime) / 1000); //得到的剩余的秒数
-                console.log(time);
-                var day = parseInt(time / 60 / 60 / 24); //总秒数除以60*60*24=86400
-                var hours = parseInt(time % 86400 / 24 / 60); //小时
-                var min = parseInt(time % 3600 / 60); //分钟
-                var sec = time % 60; //秒
+                let time = Math.round((futureTime - currentTime) / 1000); //得到的剩余的秒数
+                let day = parseInt(time / 60 / 60 / 24); //总秒数除以60*60*24=86400
+                let hours = parseInt(time % 86400 / 24 / 60); //小时
+                let min = parseInt(time % 3600 / 60); //分钟
+                let sec = time % 60; //秒
 
-                // return ('离' + what + '还剩' + double(day) + '天' + double(hours) + '时' + double(min) + '分' + double(sec) + '秒');
                 return timer[0].innerHTML = double(hours),
                     timer[1].innerHTML = double(min),
                     timer[2].innerHTML = double(sec)
@@ -206,7 +203,7 @@ define(['jlazyload'], () => {
             //渲染
             const $list = $('.main-b-list-ul')
             $.ajax({
-                url: 'http://10.31.161.50/dashboard/360mall-porject/php/listdata.php',
+                url: 'http://10.31.161.50/dashboard/360mall-porject/php/indexdata.php',
                 dataType: 'json',
             }).done(function(data) {
                 let $strhtml = '';
@@ -214,15 +211,14 @@ define(['jlazyload'], () => {
                 $.each(data, function(index, value) {
                     // console.log(value);
                     $strhtml += `
-            <a href="detail.html?sid=${value.sid}">
-                    <li>
-                    <img class="lazy" data-original="${value.url}" width="180" height="180"/>
-                    <p>${value.title}</p>
-                    <span>${value.price}</span>
-                    <i>直降</i>
-                    </li>
-                </a>
-            
+                            <a href="detail.html?sid=${value.sid}">
+                                <li>
+                                    <img class="lazy" data-original="${value.url}" width="180" height="180"/>
+                                    <p>${value.title}</p>
+                                    <span>￥${value.price}</span>
+                                    <i>直降</i>
+                                </li>
+                             </a>
             `;
                 })
                 $list.html($strhtml);

@@ -10,14 +10,16 @@ define(['jcookie'], () => {
                     $.each($arrsid, function(index, value) {
                         rendergoods($arrsid[index], $arrnum[index]); //index:数组的索引
                     });
+
                 }
+
             }
             getcookietoarray();
             //2.渲染商品列表
             function rendergoods(sid, num) { //sid:商品的编号    num:商品的数量
                 //获取所有的接口数据
                 $.ajax({
-                    url: 'http://10.31.161.50/dashboard/360mall-porject/php/listdata.php',
+                    url: 'http://10.31.161.50/dashboard/360mall-porject/php/indexdata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     $.each(data, function(index, value) {

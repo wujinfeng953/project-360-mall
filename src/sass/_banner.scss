@@ -53,20 +53,36 @@
     position: absolute;
     top: 50%;
     margin-top: -60px;
-    color: #fff;
-    font-size: 100px;
-    text-decoration: none;
     left: 940px;
-    margin-left: -360px;
+    margin-left: -349px;
+    width: 42px;
+    height: 72px;
+    background: url(https://p.ssl.qhimg.com/t01f23388c6d94b6dfb.png) no-repeat;
+    background-position: -179px -143px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    opacity: 0.5;
 }
 
 .banner-rbtn {
     position: absolute;
     top: 50%;
     margin-top: -60px;
-    color: #fff;
-    font-size: 100px;
-    text-decoration: none;
     margin-right: -590px;
-    left: 1480px;
+    left: 1500px;
+    width: 42px;
+    height: 72px;
+    background: url(https://p.ssl.qhimg.com/t01f23388c6d94b6dfb.png) no-repeat;
+    background-position: -177px -74px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.banner-rbtn:hover {
+    opacity: 1;
+}
+
+.banner-lbtn:hover {
+    opacity: 1;
 }

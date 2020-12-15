@@ -239,6 +239,7 @@ input::-webkit-input-placeholder {
 
 .main-content {
     width: 1180px;
+    min-height: 1000px;
     background: #ddd;
     margin: 0 auto;
 }
@@ -250,24 +251,22 @@ input::-webkit-input-placeholder {
     margin-bottom: 10px;
 }
 
-.main-content .main-b-list .main-b-list-ul a {
+.main-b-list-top button {
+    margin-left: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #ddd;
+    outline: none;
+}
+
+.main-b-list-top button:hover {
+    color: #23ac38;
+}
+
+.main-content .main-b-list .main-b-list-ul li {
     float: left;
-    display: block;
     margin-bottom: 20px;
     margin-right: 20px;
-}
-
-.main-content .main-b-list .main-b-list-ul a:nth-of-type(5n) {
-    margin-right: 0;
-}
-
-.main-content .main-b-list .main-b-list-ul a:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    transition: 0.2s all ease-out;
-}
-
-.main-content .main-b-list .main-b-list-ul a li {
     background: #fff;
     width: 220px;
     text-align: center;
@@ -275,13 +274,26 @@ input::-webkit-input-placeholder {
     padding: 20px 20px 0 20px;
 }
 
-.main-content .main-b-list .main-b-list-ul a li img {
+.main-content .main-b-list .main-b-list-ul li:nth-of-type(5n) {
+    margin-right: 0;
+}
+
+.main-content .main-b-list .main-b-list-ul li:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: 0.2s all ease-out;
+}
+
+
+/* .main-content .main-b-list .main-b-list-ul li {} */
+
+.main-content .main-b-list .main-b-list-ul li img {
     width: 180px;
     height: 180px;
     margin: 0 auto;
 }
 
-.main-content .main-b-list .main-b-list-ul a li p {
+.main-content .main-b-list .main-b-list-ul li p {
     font-size: 14px;
     line-height: 20px;
     margin-top: 25px;
@@ -294,12 +306,12 @@ input::-webkit-input-placeholder {
     width: 180px;
 }
 
-.main-content .main-b-list .main-b-list-ul a li span {
+.main-content .main-b-list .main-b-list-ul li span {
     color: #dd0e00;
     font-size: 20px;
 }
 
-.main-content .main-b-list .main-b-list-ul a li i {
+.main-content .main-b-list .main-b-list-ul li i {
     display: block;
     border: 1px solid #f17f38;
     height: 15px;

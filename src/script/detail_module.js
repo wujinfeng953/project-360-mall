@@ -54,7 +54,7 @@ define(['jcookie'], () => {
             //上面的函数获取cookie值，并且转换成数组，方便判断是否是第一次。
             //第一次存储添加sid进入arrsid，存储数量
             //第二次以上，直接修改数量。
-            $('.p-btn a').on('click', function() {
+            $('.p-btn-shop a').on('click', function() {
                 getcookietoarray(); //获取cookie，变成数组，判断是否存在。
                 if ($.inArray($sid, arrsid) === -1) { //不存在
                     arrsid.push($sid);
