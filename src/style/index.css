@@ -472,7 +472,7 @@ html.body {
 }
 
 .banner {
-  width: 1902px;
+  width: 1904px;
   background-color: oldlace;
   height: 530px;
   position: absolute;
@@ -506,6 +506,9 @@ html.body {
   opacity: 0.5;
   margin-right: 10px;
   cursor: pointer;
+  border: 2px solid #333;
+}
+.banner ol li:hover {
   border: 2px solid #000;
 }
 .banner .active {
@@ -642,7 +645,6 @@ html.body {
 
 .main-content {
   width: 1180px;
-  background: #ddd;
   margin: 0 auto;
 }
 .main-content .main-cnt-activity {

@@ -1,7 +1,7 @@
 <?php
 include "conn.php";//引入数据库连接代码。
 
-$result = $conn->query("select * from taobaogoods"); //获取数据的结果集(记录集)
+$result = $conn->query("select * from 360_index"); //获取数据的结果集(记录集)
 
 $num = $result->num_rows; //记录集的总条数  40
 
@@ -23,7 +23,7 @@ if (isset($_GET['page'])) {//判断前端传入的页码是否存在，
 
 $page = ($pagevalue - 1) * $pagesize; //计算开始偏移值
 
-$res = $conn->query("select * from taobaogoods limit $page,$pagesize");
+$res = $conn->query("select * from 360_index limit $page,$pagesize");
 
 
 //通过二维数组输出

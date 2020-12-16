@@ -6,7 +6,7 @@
 }
 
 .banner {
-    width: 1902px;
+    width: 1904px;
     background-color: oldlace;
     height: 530px;
     position: absolute;
@@ -41,7 +41,10 @@
             opacity: 0.5;
             margin-right: 10px;
             cursor: pointer;
-            border: 2px solid #000;
+            border: 2px solid #333;
+            &:hover {
+                border: 2px solid #000;
+            }
         }
     }
     .active {

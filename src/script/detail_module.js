@@ -40,6 +40,7 @@ define(['jcookie'], () => {
             const $bpic = $('#bpic');
             const $sf = $('#sf'); //小放
             const $bf = $('#bf'); //大放
+            const $bf_1 = $('#bf_1'); //大放
             const $left = $('#left'); //左箭头
             const $right = $('#right'); //右箭头
             const $list = $('#list'); //小图列表
@@ -50,6 +51,8 @@ define(['jcookie'], () => {
             $spic.hover(function() {
                 $sf.css('visibility', 'visible');
                 $bf.css('visibility', 'visible');
+                $bf_1.css('visibility', 'visible');
+
                 $(this).on('mousemove', function(ev) {
                     let $leftvalue = ev.pageX - $('.goodsinfo').offset().left - $sf.width() / 2;
                     let $topvalue = ev.pageY - $('.goodsinfo').offset().top - $sf.height() / 2;
@@ -79,6 +82,7 @@ define(['jcookie'], () => {
             }, function() {
                 $sf.css('visibility', 'hidden');
                 $bf.css('visibility', 'hidden');
+                $bf_1.css('visibility', 'hidden');
             });
 
             //小图切换 - 小图是渲染出来的，找不到li。

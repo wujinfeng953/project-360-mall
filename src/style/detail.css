@@ -253,8 +253,8 @@ input {
 }
 
 .wrap {
-    width: 480px;
-    height: 480px;
+    width: 482px;
+    height: 482px;
     float: left;
     border: 1px solid transparent;
     position: relative;
@@ -266,7 +266,7 @@ input {
     height: 480px;
     float: left;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #spic:hover img {
@@ -274,7 +274,7 @@ input {
 }
 
 #spic img {
-    width: 100%;
+    width: 480px;
     border: 1px solid transparent;
     padding: 1px;
 }
@@ -282,7 +282,8 @@ input {
 #sf {
     width: 50px;
     height: 50px;
-    background: orange;
+    background-color: #FEDE4F;
+    cursor: move;
     opacity: 0.3;
     position: absolute;
     left: 0px;
@@ -299,6 +300,17 @@ input {
     left: 490px;
     visibility: hidden;
     z-index: 100;
+}
+
+#bf_1 {
+    width: 480px;
+    height: 530px;
+    overflow: hidden;
+    position: absolute;
+    left: 490px;
+    background-color: #fff;
+    visibility: hidden;
+    z-index: 99;
 }
 
 #bf img {
@@ -321,7 +333,7 @@ input {
 #ulist a {
     float: left;
     width: 10px;
-    height: 92px;
+    height: 89px;
     border: 1px solid #ccc;
     text-decoration: none;
     line-height: 92px;
