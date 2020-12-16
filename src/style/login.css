@@ -284,6 +284,7 @@ input::-webkit-input-placeholder {
     margin: 0 auto;
     font-size: 12px;
     line-height: 25px;
+    height: 25px;
 }
 
 .main-form-submit {
