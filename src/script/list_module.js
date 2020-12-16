@@ -36,7 +36,9 @@ define(['pagination', 'jlazyload'], () => {
                         effect: "fadeIn" //显示方法：谈入
                     });
                 });
-                //将a元素添加到排序前的数组中。
+                $array_default = [];
+                $array = [];
+                //将li元素添加到排序前的数组中。
                 $('.main-b-list-ul li').each(function(index, element) { //element:原生的元素对象
                     $array_default[index] = $(this); //排序前
                     $array[index] = $(this); //排序后
@@ -79,7 +81,8 @@ define(['pagination', 'jlazyload'], () => {
                             $list.html($strhtml);
                             //懒加载
                             $("img.lazy").lazyload({ effect: "fadeIn" });
-
+                            $array_default = [];
+                            $array = [];
                             //将li元素添加到排序前的数组中。
                             $('.main-b-list-ul li').each(function(index, element) { //element:原生的元素对象
                                 $array_default[index] = $(this); //排序前

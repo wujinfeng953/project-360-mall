@@ -162,13 +162,16 @@
         height: 30px;
         line-height: 12px;
         box-sizing: border-box;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid #eee;
+        width: 90px;
         // &:hover {
         //     color: red;
         // }
     }
     .active2 {
         color: red;
+        font-weight: bold;
+        padding-left: 12px;
     }
 }
 

@@ -253,20 +253,30 @@ input {
 }
 
 .wrap {
+    width: 480px;
+    height: 480px;
     float: left;
     border: 1px solid transparent;
     position: relative;
+    margin-right: 100px;
 }
 
 #spic {
-    width: 400px;
-    height: 400px;
+    width: 480px;
+    height: 480px;
     float: left;
     position: relative;
+    overflow: hidden;
+}
+
+#spic:hover img {
+    border: 1px solid #ddd;
 }
 
 #spic img {
     width: 100%;
+    border: 1px solid transparent;
+    padding: 1px;
 }
 
 #sf {
@@ -281,12 +291,12 @@ input {
 }
 
 #bf {
-    width: 400px;
-    height: 500px;
-    border: 1px solid #000;
+    width: 480px;
+    height: 530px;
+    border: 1px solid #ddd;
     overflow: hidden;
     position: absolute;
-    left: 410px;
+    left: 490px;
     visibility: hidden;
     z-index: 100;
 }
@@ -295,48 +305,50 @@ input {
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 800px;
-    height: 800px;
+    width: 960px;
+    height: 960px;
 }
 
 #ulist {
     position: absolute;
     left: 0px;
-    top: 430px;
-    width: 402px;
-    height: 56px;
+    top: 500px;
+    height: 92px;
     overflow: hidden;
+    width: 482px;
 }
 
 #ulist a {
     float: left;
     width: 10px;
-    height: 54px;
+    height: 92px;
     border: 1px solid #ccc;
     text-decoration: none;
-    line-height: 56px;
+    line-height: 92px;
     text-align: center;
     background: #fff;
+    color: #ddd;
 }
 
 #list {
     float: left;
-    margin-left: 18px;
-    width: 372px;
+    margin-left: 14px;
     position: relative;
+    width: 480px;
+    height: 92px;
 }
 
 #list li {
     float: left;
-    width: 56px;
-    height: 56px;
-    padding-right: 6px;
+    width: 88px;
+    height: 92px;
+    margin-right: 3px;
+    box-sizing: border-box;
 }
 
 #list li img {
-    width: 52px;
-    height: 52px;
-    border: 1px solid #ccc;
+    width: 88px;
+    height: 88px;
 }
 
 .wrap ul {
@@ -376,7 +388,7 @@ input {
 }
 
 .goodsinfo {
-    margin: 50px 0 0 100px;
+    margin-top: 50px;
 }
 
 .goodsinfo-img {

@@ -112,7 +112,7 @@ define(['jlazyload'], () => {
             let $loutinav = $('.index-elecator-box') //左侧楼梯
             let $loutibom = $('.index-right-bottom') //右侧浏览器窗口的回到顶层按钮
             let $louti = $('.index-elecator-box a') //获取11个a
-            var $louceng = $('.a1');
+            let $louceng = $('.a1');
 
             function scroll() {
                 let $scrolltop = $(window).scrollTop(); //滚轮的初始值为-140
@@ -131,7 +131,7 @@ define(['jlazyload'], () => {
                 // 如果楼层的top值>滚动条的top值,给楼层对应的楼梯添加激活状态。
                 $louceng.each(function(index, element) {
                     let $loucengTop1 = $(element).offset().top; //每一个楼层的top值。
-                    $loucengTop1 = $loucengTop1 - 130
+                    $loucengTop1 = $loucengTop1 + 130
                     if ($loucengTop1 >= $scrolltop) {
                         //每次触发滚动条，滚动条的top值都会发生变化。
                         $louti.removeClass('active2'); //移除前面所有的激活状态
@@ -161,15 +161,20 @@ define(['jlazyload'], () => {
                 } else {
                     $loucengtop1 = $loucengtop1 - 130
                 }
-
-                $('html').stop(true).animate({
-                    scrollTop: $loucengtop1 //每个楼层的top值求出，然后给滚动条的top值
-                }, function() {
-                    $(window).on('scroll', function() {
-                        scroll();
-                    });
+                $('html').scrollTop($loucengtop1)
+                $(window).on('scroll', function() {
+                    scroll();
                 });
+                // $('html').stop(true).animate({
+                //     scrollTop: $loucengtop1 //每个楼层的top值求出，然后给滚动条的top值
+                // }, function() {
+                //     $(window).on('scroll', function() {
+                //         scroll();
+                //     });
+                // });
             });
+
+
 
             //倒计时效果
 
@@ -178,20 +183,18 @@ define(['jlazyload'], () => {
             };
 
             function futuer() {
-                let timer = document.querySelectorAll('.countdown-time')
 
-                let futureTime = new Date('2020.12.31 0:0:0'); //未来的时间
-                let currentTime = new Date(); //当前的时间 ‘实时’
-
-                let time = Math.round((futureTime - currentTime) / 1000); //得到的剩余的秒数
-                let day = parseInt(time / 60 / 60 / 24); //总秒数除以60*60*24=86400
-                let hours = parseInt(time % 86400 / 24 / 60); //小时
-                let min = parseInt(time % 3600 / 60); //分钟
-                let sec = time % 60; //秒
-
-                return timer[0].innerHTML = double(hours),
-                    timer[1].innerHTML = double(min),
-                    timer[2].innerHTML = double(sec)
+                let $timer = $('.countdown-time')
+                let $futureTime = new Date('2020.12.31 0:0:0'); //未来的时间
+                let $currentTime = new Date(); //当前的时间 ‘实时’
+                let $time = Math.round(($futureTime - $currentTime) / 1000); //得到的剩余的秒数
+                let $day = parseInt($time / 60 / 60 / 24); //总秒数除以60*60*24=86400
+                let $hours = parseInt($time % 86400 / 24 / 60); //小时
+                let $min = parseInt($time % 3600 / 60); //分钟
+                let $sec = $time % 60; //秒
+                return $timer.eq(0).html(double($hours)),
+                    $timer.eq(1).html(double($min)),
+                    $timer.eq(2).html(double($sec));
 
             }
             futuer();
