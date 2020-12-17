@@ -24,7 +24,7 @@ define(['jcookie'], () => {
                 let $picurl = data.urls.split(','); //将数据转换成数组。
                 let $strhtml = '<ul>';
                 const $list = $('#list');
-                console.log($picurl);
+                // console.log($picurl);
                 $.each($picurl, function(index, value) {
                     $strhtml += `
                 <li>
@@ -135,13 +135,34 @@ define(['jcookie'], () => {
 
             let arrsid = []; //存储商品的sid
             let arrnum = []; //存储商品的数量
+
             //提前预判cookie设置时的key值(cookiesid/cookienum)进行获取cookie
             function getcookietoarray() {
                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
                     arrsid = $.cookie('cookiesid').split(',');
                     arrnum = $.cookie('cookienum').split(',');
+                } else { //cookie不存在，清空数组
+                    arrsid = [];
+                    arrnum = [];
                 }
             }
+            $('.p-btn input').on('input', function() {
+                let $reg = /^\d+$/;
+                let $value = $(this).val();
+                console.log($(this));
+                if (!$reg.test($value)) { //不是数字
+                    $(this).val(1);
+
+                }
+                if ($value > 99) {
+                    $(this).val(99);
+                }
+
+                if ($value <= 0) {
+                    $(this).val(1);
+                }
+            })
+
             $('.p-btn-shop a').on('click', function() {
                 getcookietoarray(); //获取cookie，变成数组，判断是否存在。
                 if ($.inArray($sid, arrsid) === -1) { //不存在
