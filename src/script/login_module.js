@@ -3,7 +3,7 @@ define([], () => {
         init: function() {
             const $username = $('#username');
             const $password = $('#password');
-            const $login = $('#login'); //登录按钮
+            const $login = $('.main-form-submit'); //登录按钮
             $login.on('click', function() {
                 $.ajax({
                     type: 'post',
