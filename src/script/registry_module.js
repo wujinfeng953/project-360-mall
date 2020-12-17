@@ -5,13 +5,13 @@ define([], () => {
             const $password = $('#password');
             const $span = $('.main-form-span');
             const $border = $('.main-form-input');
-            const $from = $('from');
+            const $form = $('form');
             let $userflag = null;
             let $pwdflag = null;
 
 
             $username.on('focus', function() {
-                $span.eq(0).css('color', 'green').html('中英文均可，最长14个英文或7个汉字');
+                $span.eq(0).css('color', 'green').html('中英文数字均可，最长14个数字英文或7个汉字');
                 $border.eq(0).css('border', '1px solid green')
             })
 
@@ -31,12 +31,16 @@ define([], () => {
 
                             if ($strleng > 0 && $strleng <= 14) {
 
-                                let $reg = /^[a-zA-Z\u4e00-\u9fa5]+$/;
+                                let $reg = /^[a-zA-Z\d\u4e00-\u9fa5]+$/;
                                 if ($reg.test($_this.val())) {
                                     $span.eq(0).css('color', 'green').html('√');
                                     $border.eq(0).css('border', '1px solid #999')
                                     $userflag = true;
 
+                                } else {
+                                    $span.eq(0).css('color', 'red').html('请输入正确的格式')
+                                    $border.eq(0).css('border', '1px solid red')
+                                    $userflag = false;
                                 }
                             } else {
                                 $span.eq(0).css('color', 'red').html('请输入正确的长度')
@@ -125,7 +129,7 @@ define([], () => {
                 }
             })
 
-            $from.on('submit', function() {
+            $form.on('submit', function() {
                 if ($username.val() === '') {
                     $span.eq(0).css('color', 'red').html('用户名不能为空');
                     $userflag = false;
@@ -138,7 +142,6 @@ define([], () => {
                     return false;
                 }
             })
-
 
 
         }

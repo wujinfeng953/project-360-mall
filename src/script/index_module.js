@@ -155,7 +155,7 @@ define(['jlazyload'], () => {
 
 
                 // console.log($header.css('marginTop'));
-                if ($header.css('marginTop') === (40 + "px")) { //如果头部的margin-top值为40的时候每个楼层的top就加上90
+                if ($header.css('marginTop') === (40 + "px")) { //如果头部的margin-top值为40的时候
                     $loucengtop1 = $loucengtop1 - 40
 
                 } else {
