@@ -156,7 +156,7 @@ define(['jcookie'], () => {
                     delcookie($(this).parents('.goods-item').find('img').attr('sid'), $arrsid);
                     //传入当前的sid 和 cookiesid的值
                     if ($arrsid.length === 0) {
-                        alert(1);
+
                         $.cookie('cookiesid', $arrsid, { expires: -1, path: '/' });
                         $.cookie('cookienum', $arrnum, { expires: -1, path: '/' });
                     }
@@ -167,7 +167,7 @@ define(['jcookie'], () => {
                 cookietoarray(); //cookie转换成数组
                 if (window.confirm('你确定要删除吗?')) {
                     $('.goods-item:visible').each(function() {
-                        console.log($(this)); //表示当前遍历的goods-item
+                        // console.log($(this)); //表示当前遍历的goods-item
                         if ($(this).find(':checkbox').is(':checked')) { //当前的复选框是否选中
                             $(this).remove();
                             delcookie($(this).find('img').attr('sid'), $arrsid)
@@ -197,7 +197,10 @@ define(['jcookie'], () => {
                 $.cookie('cookiesid', $arrsid, { expires: 10, path: '/' });
                 $.cookie('cookienum', $arrnum, { expires: 10, path: '/' });
             }
-
+            let $close = $('.btn-area a')
+            $close.on('click', function() {
+                alert('对不起您的余额为￥-9999999999')
+            })
 
         }
     }
