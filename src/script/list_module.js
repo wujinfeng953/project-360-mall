@@ -55,7 +55,7 @@ define(['pagination', 'jlazyload'], () => {
                     prevContent: '上一页', //将图标改成上一页下一页。
                     nextContent: '下一页',
                     callback: function(api) {
-                        console.log(api.getCurrent()); //获取当前的点击的页码。
+                        // console.log(api.getCurrent()); //获取当前的点击的页码。
                         $.ajax({
                             url: 'http://10.31.161.50/dashboard/360mall-porject/php/listdata.php',
                             data: {
@@ -138,6 +138,23 @@ define(['pagination', 'jlazyload'], () => {
                 });
 
             })
+            if (localStorage.getItem('loginname')) {
+                $('.user-box-alogin').hide();
+                $('.user-box-aregistry').hide();
+                $('.user-box-aspan1').show();
+                $('.user-box-aspan2').show();
+                $('.user-box-aspan1').html(localStorage.getItem('loginname'));
+            }
+
+            //退出登录 - 删除本地存储
+            $('.user-box-aspan2').on('click', function() {
+
+                $('.user-box-aspan1').hide();
+                $('.user-box-aspan2').hide();
+                $('.user-box-alogin').show();
+                $('.user-box-aregistry').show();
+                localStorage.removeItem('loginname');
+            });
         }
     }
 });

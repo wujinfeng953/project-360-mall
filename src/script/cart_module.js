@@ -201,6 +201,23 @@ define(['jcookie'], () => {
             $close.on('click', function() {
                 alert('对不起您的余额为￥-9999999999')
             })
+            if (localStorage.getItem('loginname')) {
+                $('.user-box-alogin').hide();
+                $('.user-box-aregistry').hide();
+                $('.user-box-aspan1').show();
+                $('.user-box-aspan2').show();
+                $('.user-box-aspan1').html(localStorage.getItem('loginname'));
+            }
+
+            //退出登录 - 删除本地存储
+            $('.user-box-aspan2').on('click', function() {
+
+                $('.user-box-aspan1').hide();
+                $('.user-box-aspan2').hide();
+                $('.user-box-alogin').show();
+                $('.user-box-aregistry').show();
+                localStorage.removeItem('loginname');
+            });
 
         }
     }
